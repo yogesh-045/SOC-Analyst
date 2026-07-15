@@ -155,17 +155,18 @@ Most Linux logs are stored in:
 
 # Common logs:
 
-File	Description
-/var/log/auth.log	Authentication and SSH logins
-/var/log/syslog	General system logs
-/var/log/messages	System messages (some distributions)
-/var/log/kern.log	Kernel logs
-/var/log/boot.log	Boot messages
-/var/log/dmesg	Hardware detection
-/var/log/apache2/access.log	Apache web requests
-/var/log/apache2/error.log	Apache errors
-/var/log/nginx/access.log	Nginx requests
-/var/log/nginx/error.log	Nginx errors
+| Log File | Description |
+|----------|-------------|
+| `/var/log/auth.log` | Stores authentication events, SSH login attempts, sudo usage, and user authentication logs. |
+| `/var/log/syslog` | Stores general system messages, services, daemons, and kernel-related events. |
+| `/var/log/messages` | Stores general system messages on some Linux distributions (e.g., RHEL, CentOS). |
+| `/var/log/kern.log` | Stores Linux kernel messages, driver events, and hardware-related logs. |
+| `/var/log/boot.log` | Stores system boot process and startup messages. |
+| `/var/log/dmesg` | Stores kernel ring buffer messages, including hardware detection and device initialization. |
+| `/var/log/apache2/access.log` | Records all incoming HTTP requests handled by the Apache web server. |
+| `/var/log/apache2/error.log` | Records Apache server errors, warnings, and debugging information. |
+| `/var/log/nginx/access.log` | Records all incoming HTTP requests handled by the Nginx web server. |
+| `/var/log/nginx/error.log` | Records Nginx server errors, warnings, and debugging information. |
 
 # auth.log (Most Important Linux Log)
 SSH login
