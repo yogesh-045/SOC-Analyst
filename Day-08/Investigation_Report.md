@@ -10,8 +10,8 @@ The failed logon event was generated in a controlled lab environment for SOC Ana
 
 | *Field* | *Value* |
 |--------|-------|
-|** Event ID** | 4625 |
-|** Severity** | Low |
+| Event ID | 4625 |
+| Severity | Low |
 | **Host** | DESKTOP-LDBFHIM |
 | **Target User** | Yogeshh~ |
 | **Source IP** | 127.0.0.1 |
