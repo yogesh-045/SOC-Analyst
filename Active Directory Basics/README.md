@@ -356,11 +356,17 @@ Unusual Kerberos ticket activity
 
 # Common Monitoring Tools
 Splunk
+
 Microsoft Sentinel
+
 QRadar
+
 Microsoft Defender XDR
+
 CrowdStrike Falcon
+
 Sysmon
+
 Windows Event Viewer
 
 
