@@ -1,8 +1,6 @@
 # 💬 Cloud Security Interview Questions
 
-These are the most commonly asked Cloud Security interview questions for **SOC Analyst**, **Cybersecurity Analyst**, and **Cloud Security Analyst** roles.
 
----
 
 # 1. What is Cloud Computing?
 
