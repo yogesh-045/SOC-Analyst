@@ -1,390 +1,457 @@
-#  What is Active Directory?
-"Active Directory is Microsoft's centralized directory service used to manage users, computers, groups, and security policies in an organization. It provides authentication and authorization, making it easier for administrators to manage the entire network from one place."
+# 📖 Active Directory (AD)
 
-#  Why do organizations use Active Directory?
-Organizations use Active Directory because it simplifies administration by providing centralized management of users, computers, and security policies. It also improves security, supports Single Sign-On, and makes it easier to manage large networks.
-# Benefits
-Centralized user management
+## What is Active Directory?
 
-Centralized authentication
+**Active Directory (AD)** is Microsoft's centralized directory service used to manage **users, computers, groups, and security policies** in an organization. It provides **authentication** and **authorization**, making it easier for administrators to manage the entire network from one place.
 
-Centralized authorization
+---
 
-Group Policy management
+# 🎯 Why Do Organizations Use Active Directory?
 
-Better security
+Organizations use Active Directory because it:
 
-Single Sign-On
+- Simplifies administration
+- Provides centralized management of users and computers
+- Manages security policies from one location
+- Improves overall security
+- Supports **Single Sign-On (SSO)**
+- Makes managing large networks easier
 
-Easy auditing
+---
 
-Scalability
+# ✅ Benefits of Active Directory
 
-# Active Directory Components
-Active Directory consists of several components that help organize and manage the network.
-# Main Components
-Domain – A logical group of users, computers, and resources sharing the same security database.
+- 👤 Centralized User Management
+- 🔐 Centralized Authentication
+- ✅ Centralized Authorization
+- ⚙️ Group Policy Management
+- 🛡️ Better Security
+- 🔑 Single Sign-On (SSO)
+- 📋 Easy Auditing
+- 📈 Scalability
 
-Domain Controller (DC) – A Windows Server that runs Active Directory and authenticates users.
+---
 
-Forest – The highest-level AD container containing one or more domains.
+# 🏗️ Active Directory Components
 
-Tree – A group of domains sharing the same namespace.
+Active Directory consists of several components that help organize and manage a network.
 
-Organizational Unit (OU) – A container used to organize users, computers, and groups.
+| Component | Description |
+|-----------|-------------|
+| **Domain** | A logical group of users, computers, and resources sharing the same security database. |
+| **Domain Controller (DC)** | A Windows Server that runs Active Directory and authenticates users. |
+| **Forest** | The highest-level AD container containing one or more domains. |
+| **Tree** | A group of domains sharing the same namespace. |
+| **Organizational Unit (OU)** | A container used to organize users, computers, and groups. |
+| **Objects** | Resources stored in AD such as Users, Computers, Groups, Printers, and Contacts. |
 
-Objects – Resources stored in AD such as Users, Computers, Groups, 
-Printers, and Contacts.
+---
 
-#  What are the benefits of Active Directory?
-The main benefits of Active Directory are centralized management, improved security, Single Sign-On, easier user administration, Group Policy management, and the ability to efficiently manage thousands of users and computers.
+# ⭐ What Are the Benefits of Active Directory?
 
-# Major benefits include:
-Centralized administration
+The major benefits of Active Directory include:
 
-Single Sign-On
+- 🏢 Centralized Administration
+- 🔑 Single Sign-On (SSO)
+- 🛡️ Better Security
+- ⚙️ Group Policy Management
+- 👥 Easy User Management
+- 📂 Resource Sharing
+- 🔒 Password Management
+- 📈 Scalability
+- 📊 Auditing and Logging
 
-Better security
+---
+# 🖥️ Domain Controller (DC)
 
-Group Policy management
+## What is a Domain Controller (DC)?
 
-Easy user management
+A **Domain Controller (DC)** is a **Windows Server** running **Active Directory Domain Services (AD DS)**. It authenticates users, authorizes access, stores the Active Directory database, applies **Group Policies**, and manages all domain resources.
 
-Resource sharing
+---
 
-Password management
+## 🎯 Responsibilities of a Domain Controller
 
-Scalability
+- 🔐 Authentication
+- ✅ Authorization
+- 🌐 DNS Integration
+- ⚙️ Group Policy Management
+- 🔄 Replication
+- 👤 User Management
 
-Auditing and logging
+---
 
+# 📂 Organizational Unit (OU)
 
-#  What is a Domain Controller (DC)?
-A Domain Controller is a Windows Server running Active Directory Domain Services. It authenticates users, authorizes access, stores the Active Directory database, applies Group Policies, and manages all domain resources.
+## What is an Organizational Unit (OU)?
 
-# Responsibilities
-Authentication
+An **Organizational Unit (OU)** is a logical container inside a domain used to organize **Active Directory objects**. It simplifies administration and allows different **Group Policies (GPOs)** to be applied to different departments.
 
-Authorization
+### 📌 Example
 
-DNS integration
-
-Group Policy
-
-Replication
-
-User management
-
-
-
-#  What is an Organizational Unit (OU)?
-An Organizational Unit is a logical container inside a domain used to organize Active Directory objects. It simplifies administration and allows different Group Policies to be applied to different departments.
-
-# Example
+```text
 Company
+│
+├── HR
+├── IT
+├── Finance
+└── Sales
+```
 
-HR
+---
 
-IT
+# 👥 Security Group vs Distribution Group
 
-Finance
+| Security Group | Distribution Group |
+|----------------|--------------------|
+| Used for assigning permissions | Used only for email distribution |
+| Can assign access rights | Cannot assign access rights |
+| Used for file and folder permissions | Used for mailing lists only |
+| Supports access control | Does not support access control |
 
-Sales
+---
 
-#  What is the difference between a Security Group and a Distribution Group?
-A Security Group is used to assign permissions to resources such as folders and printers, whereas a Distribution Group is only used for email distribution and cannot be used for access control
+# 🌍 Global Catalog (GC)
 
-# Security Group
-Used for permissions
+## What is the Purpose of the Global Catalog?
 
-Can assign access rights
+The **Global Catalog (GC)** is a special **Domain Controller role** that stores a **searchable partial copy** of all objects in the forest. It improves search performance and supports cross-domain authentication.
 
-Used for file and folder permissions
+### ✅ Global Catalog Enables
 
+- 🔍 Fast object searches
+- 👤 User logons across domains
+- 👥 Universal Group membership lookups
 
-#  What is the purpose of the Global Catalog?
-The Global Catalog is a special Domain Controller role that stores a searchable partial copy of all objects in the forest. It improves search performance and supports cross-domain authentication.
+---
 
-# It enables:
-Fast object searches
+# 🔐 Authentication vs Authorization
 
-User logons across domains
+| Authentication | Authorization |
+|---------------|---------------|
+| Verifies a user's identity | Determines what resources the user can access |
+| **Question:** Who are you? | **Question:** What are you allowed to access? |
+| Uses username and password | Uses permissions and group memberships |
 
-Universal Group membership lookups
+### Authentication Example
 
-#  Explain Authentication and Authorization.
-Authentication verifies the user's identity using credentials like a username and password. Authorization determines what resources the authenticated user is allowed to access based on permissions and group memberships.
+```
+Username + Password
+        │
+        ▼
+Identity Verified
+```
 
-Authentication
+### Authorization Example
 
-Authentication verifies identity.
+```
+Identity Verified
+        │
+        ▼
+Access Granted Based on Permissions
+```
 
-# Question:
-Who are you?
+---
 
-# Example
-Username and password verification.
+# 🎫 Kerberos Authentication
 
-Authorization
+## What is Kerberos?
 
-Authorization determines permissions.
+**Kerberos** is the default authentication protocol used in **Active Directory**. After a user logs in, the **Key Distribution Center (KDC)** on the Domain Controller issues a **Ticket Granting Ticket (TGT)**. The client then uses the **TGT** to request **Service Tickets** for accessing network resources without repeatedly sending the user's password.
 
-# Question
+---
 
-What are you allowed to access?
+## 🔄 Kerberos Authentication Steps
 
+1. User enters **username and password**.
+2. Client requests a **Ticket Granting Ticket (TGT)** from the **KDC**.
+3. KDC verifies the user's credentials.
+4. Client receives the **TGT**.
+5. Client requests a **Service Ticket** using the TGT.
+6. KDC issues the **Service Ticket**.
+7. Client presents the Service Ticket to the target server.
+8. Access is granted if the ticket is valid.
 
-#  How does Kerberos authentication work?
-Kerberos is the default authentication protocol in Active Directory. After a user logs in, the Domain Controller's KDC issues a Ticket Granting Ticket. The client then uses this TGT to obtain Service Tickets for resources, allowing secure authentication without repeatedly sending the user's password.
+---
 
-# Steps
-User enters username and password.
+## 📊 Kerberos Authentication Flow
 
-The client requests a Ticket Granting Ticket (TGT) from the Domain 
-Controller (specifically the Key Distribution Center, or KDC).
-
-The KDC verifies the user's credentials.
-
-The client receives a TGT.
-
-When accessing a service, the client uses the TGT to request a Service 
-Ticket.
-
-The Service Ticket is presented to the target server.
-
-Access is granted if the ticket is valid.
-
+```text
 User
-
-↓
-
+ │
+ ▼
 Login
-
-↓
-
+ │
+ ▼
 Domain Controller (KDC)
-
-↓
-
-TGT
-
-↓
-
-Service Ticket
-
-↓
-
+ │
+ ▼
+Ticket Granting Ticket (TGT)
+ │
+ ▼
+Request Service Ticket
+ │
+ ▼
+Service Ticket Issued
+ │
+ ▼
 File Server
+ │
+ ▼
+✅ Access Granted
+```
 
-↓
+---
 
-Access Granted
+# 🔑 NTLM Authentication
 
+## When is NTLM Used?
 
-# When is NTLM used?
-NTLM is Microsoft's older authentication protocol. It is mainly used when Kerberos authentication is unavailable or unsupported. Although still supported for compatibility, Kerberos is preferred because it is more secure.
+**NTLM (NT LAN Manager)** is Microsoft's older authentication protocol. It is mainly used when **Kerberos authentication** is unavailable or unsupported. Although NTLM is still supported for compatibility, **Kerberos is preferred** because it is more secure.
 
-NTLM is used when Kerberos cannot be used.
+---
 
-# Examples
-Legacy systems
+## 📌 NTLM is Used When
 
-Workgroup computers
+- 🖥️ Legacy systems
+- 💻 Workgroup computers
+- 📦 Applications that do not support Kerberos
+- ⚠️ Situations where Kerberos requirements are not met
 
-Some applications that do not support Kerberos
+> **Note:** In modern Active Directory environments, **Kerberos** is the default authentication protocol, while **NTLM** is mainly used for backward compatibility.
 
-Certain scenarios where Kerberos requirements are not met
+---
 
-# Group Policy (GPO)
-A Group Policy Object (GPO) is a collection of settings that allows administrators to configure and enforce rules on users and computers in an Active Directory domain.
+# ⚙️ Group Policy Object (GPO)
 
-# Uses
-Disable USB devices
+## What is a Group Policy Object (GPO)?
 
-Enforce password policies
+A **Group Policy Object (GPO)** is a collection of settings that allows administrators to configure and enforce rules on users and computers in an **Active Directory** domain.
 
-Install software
+---
 
-Configure Windows Firewall
+## 🎯 Common Uses of GPO
 
-Disable Control Panel
+- 🔒 Disable USB Devices
+- 🔑 Enforce Password Policies
+- 📦 Install Software
+- 🛡️ Configure Windows Firewall
+- 🚫 Disable Control Panel
+- 🖼️ Set Desktop Wallpaper
 
-Set desktop wallpaper
+---
 
-# Example
-Admin creates a policy:
+## 📌 Example
 
+```text
+Administrator creates a GPO
+
+        │
+        ▼
 Disable USB Storage
 
-The policy is automatically applied to every computer in the IT department.
+        │
+        ▼
+Applied automatically to all
+computers in the IT Department
+```
 
-#  DNS Basics
-DNS (Domain Name System) translates domain names into IP addresses.
+---
 
-Active Directory depends on DNS to locate Domain Controllers and other services.
+# 🌐 DNS Basics
 
-# Example
+## What is DNS?
+
+**DNS (Domain Name System)** translates **domain names** into **IP addresses**.
+
+Active Directory depends on **DNS** to locate **Domain Controllers** and other network services.
+
+---
+
+## 📌 Example
+
 Instead of remembering:
 
+```text
 192.168.1.10
+```
 
-Users type:
+Users simply type:
 
+```text
 server.company.local
+```
 
+---
 
-# Why DNS is Important in AD
-Finds Domain Controllers
+## ✅ Why DNS is Important in Active Directory
 
-Supports user logins
+- 🌍 Finds Domain Controllers
+- 👤 Supports User Logins
+- 🔐 Enables Authentication
+- 📡 Helps Computers Locate Network Resources
 
-Enables authentication
+> **Without DNS, Active Directory will not function properly.**
 
-Helps computers locate network resources
+---
 
-Without DNS, Active Directory will not function properly.
+# 👥 Active Directory Users and Computers (ADUC)
 
-#  AD Users & Computers
-Active Directory Users and Computers (ADUC) is the Microsoft Management Console (MMC) tool used to manage Active Directory objects.
+## What is ADUC?
 
-# Using ADUC, administrators can:
-Create users
+**Active Directory Users and Computers (ADUC)** is the **Microsoft Management Console (MMC)** used to manage Active Directory objects.
 
-Delete users
+---
 
-Disable or enable accounts
+## Using ADUC, Administrators Can
 
-Create groups
+- ➕ Create Users
+- ❌ Delete Users
+- 🔒 Disable or Enable Accounts
+- 👥 Create Groups
+- 💻 Join Computers to the Domain
+- 🔑 Reset Passwords
+- 📂 Move Objects Between Organizational Units (OUs)
 
-Join computers to the domain
+---
 
-Reset passwords
+## 📌 Example
 
-Move objects between Organizational Units (OUs)
+```text
+User Name   : Rahul
+Department  : IT
+Password    : ********
 
-# Example
+↓
 
-Administrator creates:
+Rahul can now log in
+to any domain-joined computer.
+```
 
-User
+---
 
-Rahul
+# 🚨 Common Active Directory Attacks
 
-Department
+## 1️⃣ Pass-the-Hash (PtH)
 
-IT
+Uses **stolen NTLM password hashes** to authenticate without knowing the actual password.
 
+---
+
+## 2️⃣ Pass-the-Ticket (PtT)
+
+Uses **stolen Kerberos tickets** to access resources without re-entering credentials.
+
+---
+
+## 3️⃣ Kerberoasting
+
+An attacker requests **Kerberos Service Tickets** and attempts to crack them offline to recover **service account passwords**.
+
+---
+
+## 4️⃣ Password Spraying
+
+Attempts **one common password** against **many different user accounts** to avoid account lockouts.
+
+### Example
+
+```text
 Password
-
-********
-
-This user can now log in to any domain-joined computer.
-
-# Common Active Directory Attacks
-# Pass-the-Hash (PtH)
-Uses stolen NTLM password hashes to authenticate without knowing the actual password.
-
-# Pass-the-Ticket (PtT)
-Uses stolen Kerberos tickets to access resources without re-entering credentials.
-
-# Kerberoasting
-An attacker requests Kerberos service tickets and attempts to crack them offline to recover service account passwords.
-
-# Password Spraying
-Attempts one common password against many different user accounts to avoid account lockouts.
-
-# Example:
-
-Password:
 
 Welcome@123
 
-↓
+        │
+        ▼
 
-Tried on
+Tried Against
 
 Rahul
 Amit
 John
 Sneha
+```
 
-# Brute Force Attack
-Attempts many passwords against a single account until one works.
+---
 
-# Golden Ticket Attack
-An attacker forges a Kerberos Ticket Granting Ticket (TGT), usually after compromising the KRBTGT account, to gain long-term access to the domain.
+## 5️⃣ Brute Force Attack
 
-# DCSync Attack
-An attacker impersonates a Domain Controller and requests password hashes from Active Directory.
+Attempts **many passwords** against **one account** until the correct password is found.
 
-#  Detection & Monitoring
-Detection and Monitoring involve continuously observing Active Directory logs and events to identify suspicious or malicious activities.
+---
 
-# What SOC Analysts Monitor
-Failed logins
+## 6️⃣ Golden Ticket Attack
 
-Multiple successful logins from unusual locations
+An attacker forges a **Kerberos Ticket Granting Ticket (TGT)** after compromising the **KRBTGT** account to gain long-term access to the domain.
 
-Privileged account logins
+---
 
-User account creation
+## 7️⃣ DCSync Attack
 
-Group membership changes
+An attacker impersonates a **Domain Controller** and requests password hashes from Active Directory.
 
-Password resets
+---
 
-Account lockouts
+# 🔍 Detection & Monitoring
 
-Kerberos ticket requests
+Detection and Monitoring involve continuously observing **Active Directory logs** and **security events** to identify suspicious or malicious activities.
 
-New process creation
+---
 
-PowerShell execution
+## 👨‍💻 What SOC Analysts Monitor
 
-# Common SIEM Rules
-More than 10 failed logins in 5 minutes
+- ❌ Failed Logins
+- 🌍 Successful Logins from Unusual Locations
+- 👑 Privileged Account Logins
+- 👤 User Account Creation
+- 👥 Group Membership Changes
+- 🔑 Password Resets
+- 🔒 Account Lockouts
+- 🎫 Kerberos Ticket Requests
+- ⚙️ New Process Creation
+- 💙 PowerShell Execution
 
-New Domain Admin account created
+---
 
-Disabled account successfully logs in
+# 📊 Common SIEM Detection Rules
 
-Account added to the Domain Admins group
+- 🚨 More than **10 failed logins within 5 minutes**
+- 👑 New **Domain Admin** account created
+- 🚫 Disabled account successfully logged in
+- ➕ User added to **Domain Admins**
+- 🔒 Multiple account lockouts
+- 🎫 Unusual Kerberos ticket activity
 
-Multiple account lockouts
+---
 
-Unusual Kerberos ticket activity
+# 🛠️ Common Monitoring Tools
 
-# Common Monitoring Tools
-Splunk
+- Splunk
+- Microsoft Sentinel
+- IBM QRadar
+- Microsoft Defender XDR
+- CrowdStrike Falcon
+- Sysmon
+- Windows Event Viewer
 
-Microsoft Sentinel
+---
 
-QRadar
-
-Microsoft Defender XDR
-
-CrowdStrike Falcon
-
-Sysmon
-
-Windows Event Viewer
-
-
+# 📑 Important Windows Event IDs for SOC Analysts
 
 | Event ID | Event Name | Description | SOC Use Case |
 |----------|------------|-------------|--------------|
-| **4624** | Successful Logon | Generated when a user successfully logs in to a system. | Monitor normal logins and detect unusual login times or locations. |
-| **4625** | Failed Logon | Generated when a login attempt fails due to an incorrect username or password. | Detect brute-force attacks, password spraying, or unauthorized access attempts. |
-| **4634** | User Logoff | Generated when a user logs off from a system. | Track user session duration and identify abnormal logoff behavior. |
-| **4648** | Logon Using Explicit Credentials | Generated when a user logs in using different credentials (e.g., Run As). | Detect credential misuse, lateral movement, or privilege escalation attempts. |
-| **4672** | Special Privileges Assigned | Generated when an account with administrative or special privileges logs in. | Monitor privileged account usage and detect suspicious admin logins. |
-| **4688** | New Process Created | Generated whenever a new process starts on the system. | Detect malicious processes, PowerShell abuse, or malware execution. |
-| **4720** | User Account Created | Generated when a new user account is created in Active Directory. | Detect unauthorized account creation or persistence mechanisms. |
-| **4726** | User Account Deleted | Generated when a user account is deleted. | Monitor account removal and investigate suspicious deletions. |
-| **4728** | User Added to Security Group | Generated when a user is added to a security-enabled global group. | Detect privilege escalation, especially additions to Domain Admins or other privileged groups. |
-| **4732** | Member Added to Local Security Group | Generated when a member is added to a local security group. | Monitor changes to local administrator or privileged groups. |
-| **4740** | User Account Locked Out | Generated when a user account is locked due to multiple failed login attempts. | Detect brute-force attacks or compromised accounts. |
-| **4768** | Kerberos TGT Requested | Generated when a user requests a Kerberos Ticket Granting Ticket (TGT). | Monitor Kerberos authentication activity and identify abnormal login patterns. |
-| **4769** | Kerberos Service Ticket Requested | Generated when a service ticket is requested from the Key Distribution Center (KDC). | Detect Kerberoasting attacks and unusual service ticket requests. |
-| **4771** | Kerberos Authentication Failed | Generated when Kerberos authentication fails. | Detect password guessing, expired passwords, or authentication issues. |
-| **4776** | NTLM Authentication | Generated when NTLM authentication is used to validate user credentials. | Detect legacy authentication usage, Pass-the-Hash attacks, or systems not using Kerberos. |
+| **4624** | Successful Logon | User successfully logged in | Detect unusual login times or locations |
+| **4625** | Failed Logon | Login attempt failed | Detect brute-force and password spraying |
+| **4634** | User Logoff | User logged off | Track session duration |
+| **4648** | Logon Using Explicit Credentials | Login using alternate credentials | Detect credential misuse and lateral movement |
+| **4672** | Special Privileges Assigned | Administrative account login | Monitor privileged account activity |
+| **4688** | New Process Created | New process started | Detect malware execution and PowerShell abuse |
+| **4720** | User Account Created | New AD user account created | Detect unauthorized account creation |
+| **4726** | User Account Deleted | User account deleted | Investigate suspicious account removal |
+| **4728** | User Added to Security Group | User added to security group | Detect privilege escalation |
+| **4732** | Member Added to Local Security Group | User added to local security group | Monitor local administrator changes |
+| **4740** | User Account Locked Out | Account locked after failed logins | Detect brute-force attacks |
+| **4768** | Kerberos TGT Requested | Ticket Granting Ticket requested | Monitor Kerberos authentication |
+| **4769** | Kerberos Service Ticket Requested | Service ticket requested | Detect Kerberoasting attacks |
+| **4771** | Kerberos Authentication Failed | Kerberos login failed | Detect password guessing or expired passwords |
+| **4776** | NTLM Authentication | NTLM credential validation | Detect Pass-the-Hash attacks and legacy authentication |
